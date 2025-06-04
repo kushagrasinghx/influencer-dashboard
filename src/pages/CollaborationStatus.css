@@ -1,0 +1,86 @@
+.collab-board {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  overflow-x: auto;
+}
+
+.column {
+  min-width: 260px;
+  flex: 1;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.column-header h4 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.status-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.card-header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.card-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.875rem;
+}
+
+.desc {
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+  color: #555;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tag {
+  background: #fde8ed;
+  color: #9f1d35;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.meta {
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  word-break: break-word;
+}
+
+.status-card a {
+  color: #2b6cb0;
+  text-decoration: underline;
+  word-break: break-word;
+  display: inline-block;
+  max-width: 100%;
+}

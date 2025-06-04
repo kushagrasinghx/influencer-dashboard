@@ -1,0 +1,15 @@
+.app {
+  display: flex;
+}
+
+.content {
+  margin-left: 80px;
+  width: calc(100% - 80px);
+  background-color: #F9F9F9;
+}
+
+.page-body {
+  padding: 24px 32px;
+  background-color: #fafafa;
+  min-height: calc(100vh - 80px);
+}

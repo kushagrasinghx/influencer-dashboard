@@ -1,0 +1,137 @@
+.brands-page {
+  padding: 0 1rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.brands-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.search-filter {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+  background: #f3f3f3;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+}
+
+.search-input input {
+  border: none;
+  background: transparent;
+  margin-left: 8px;
+  outline: none;
+}
+
+.filter-btn {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.brand-card {
+  background: #fff;
+  padding: 1.25rem;
+  border-radius: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.brand-header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.brand-header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.brand-header h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 0.25rem;
+}
+
+.rating span {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #333;
+  margin-left: 4px;
+}
+
+.desc {
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.tag-list {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: #fde8ed;
+  color: #9f1d35;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.campaigns strong {
+  color: #9f1d35;
+}
+
+.collab-btn {
+  background-color: #9f1d35;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.875rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.collab-btn:hover {
+  background-color: #fce8ec;
+  color: #9F1D35
+}
