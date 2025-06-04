@@ -1,79 +1,166 @@
-.collab-board {
+/* Font and global container */
+.collab-vertical-board {
   display: flex;
-  gap: 1rem;
-  justify-content: space-between;
-  overflow-x: auto;
+  flex-direction: column;
+  padding-bottom: 2rem;
+  font-family: 'DM Sans', sans-serif;
 }
 
-.column {
-  min-width: 260px;
-  flex: 1;
-  background: #f9f9f9;
+/* Header: Search + Filter + Count */
+.collab-search-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.search-left h3 {
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.search-right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Match AllBrands style */
+.search-input {
+  display: flex;
+  align-items: center;
+  background: #f3f3f3;
+  padding: 0.5rem 0.75rem;
   border-radius: 8px;
 }
 
-.column-header h4 {
-  font-size: 1rem;
+.search-input input {
+  border: none;
+  background: transparent;
+  margin-left: 8px;
+  outline: none;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.filter-btn {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Section container */
+.collab-section {
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  margin-bottom: 1.75rem;
+}
+
+/* Section toggle header */
+.collab-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
   margin-bottom: 1rem;
 }
 
+.collab-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+/* Cards list within a section */
+.collab-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Brand card */
 .status-card {
   background: #fff;
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-  word-break: break-word;
-  overflow-wrap: break-word;
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
+/* Card header with logo and name */
 .card-header {
   display: flex;
   gap: 1rem;
   align-items: center;
-  margin-bottom: 0.75rem;
 }
 
 .card-header img {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 8px;
   object-fit: cover;
+}
+
+.card-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
 }
 
 .rating {
   display: flex;
   align-items: center;
   gap: 4px;
+  margin-top: 0.25rem;
   font-size: 0.875rem;
+  color: #333;
 }
 
+.rating span {
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+/* Description text */
 .desc {
-  font-size: 0.85rem;
-  margin: 0.5rem 0;
-  color: #555;
+  font-size: 0.875rem;
+  color: #666;
   line-height: 1.4;
-  word-break: break-word;
 }
 
+/* Tags */
 .tag-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 
 .tag {
-  background: #fde8ed;
+  background-color: #fde8ed;
   color: #9f1d35;
   font-size: 0.75rem;
-  padding: 4px 8px;
-  border-radius: 6px;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 500;
 }
 
+/* Meta fields (dates, links) */
 .meta {
   font-size: 0.75rem;
-  margin-top: 0.25rem;
+  color: #444;
   word-break: break-word;
 }
 
@@ -83,4 +170,28 @@
   word-break: break-word;
   display: inline-block;
   max-width: 100%;
+}
+
+.card-header-with-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.action-btn {
+  background-color: #9f1d35;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.875rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-btn:hover {
+  background-color: #fce8ec;
+  color: #9F1D35;
 }

@@ -1,5 +1,5 @@
 const Coupon = () => {
-  return <p>All your brand coupon codes.</p>
+  return (<></>)
 }
 
 export default Coupon

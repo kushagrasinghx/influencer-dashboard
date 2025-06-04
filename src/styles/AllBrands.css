@@ -1,5 +1,4 @@
 .brands-page {
-  padding: 0 1rem;
   font-family: 'DM Sans', sans-serif;
 }
 
@@ -44,9 +43,28 @@
 
 .brands-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 1.5rem;
+  grid-template-columns: repeat(1, 1fr); /* Mobile default */
 }
+
+@media (min-width: 640px) {
+  .brands-grid {
+    grid-template-columns: repeat(2, 1fr); /* Tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  .brands-grid {
+    grid-template-columns: repeat(3, 1fr); /* Laptops */
+  }
+}
+
+@media (min-width: 1600px) {
+  .brands-grid {
+    grid-template-columns: repeat(4, 1fr); /* Zoomed out or larger screens */
+  }
+}
+
 
 .brand-card {
   background: #fff;

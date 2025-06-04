@@ -67,21 +67,23 @@ export const dummyBrands = [
     status: 'approved-archived'
   },
   {
-    name: 'EverEm Skincare',
+    name: 'PureGlow Naturals',
     logo: everem,
     rating: 4.5,
     tags: ['Fashion', 'Beauty', 'Skincare'],
     submittedDate: '20/05/2025',
     submittedLink: 'https://images.app.goo.gl/ovQvEUEiRN9fEFew9',
     uploadedWork: 'Content 1.mp4',
-    status: 'submitted'
+    status: 'submitted',
+    desc: 'PureGlow Naturals reappears here after content submission with a focus on post-collaboration visibility.'
   },
   {
-    name: 'Tech Innovations',
+    name: 'NextGen Devices',
     logo: tech,
     rating: 4.5,
     tags: ['Fashion', 'Beauty', 'Skincare'],
     requestedDate: '20/05/2025',
-    status: 'rejected'
+    status: 'rejected',
+    desc: 'This is another campaign with NextGen Devices, recently reviewed.'
   }
 ];
