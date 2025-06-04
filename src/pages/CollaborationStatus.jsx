@@ -1,5 +1,5 @@
 import React from 'react';
-import './CollaborationStatus.css';
+import '../styles/CollaborationStatus.css';
 import { dummyBrands } from '../data/brands';
 import { Star } from 'lucide-react';
 

@@ -1,7 +1,11 @@
+import everem from '../assets/logos/everem.png';
+import nutriwell from '../assets/logos/nutriwell.png';
+import tech from '../assets/logos/tech.png';
+
 export const dummyBrands = [
   {
     name: 'EverEm Skincare',
-    logo: 'dataset/everem.png',
+    logo: everem,
     rating: 4.5,
     tags: ['Fashion', 'Beauty', 'Skincare'],
     campaigns: 1,
@@ -14,7 +18,7 @@ export const dummyBrands = [
   },
   {
     name: 'NutriWell Foods',
-    logo: 'dataset/nutriwell.png',
+    logo: nutriwell,
     rating: 4.5,
     tags: ['Lifestyle', 'Health', 'Nutrition'],
     campaigns: 1,
@@ -24,7 +28,7 @@ export const dummyBrands = [
   },
   {
     name: 'Tech Innovations',
-    logo: 'dataset/tech.png',
+    logo: tech,
     rating: 4.5,
     tags: ['Lifestyle', 'Health', 'Nutrition'],
     campaigns: 1,
@@ -34,7 +38,7 @@ export const dummyBrands = [
   },
   {
     name: 'GlowUp Cosmetics',
-    logo: 'dataset/nutriwell.png',
+    logo: nutriwell,
     rating: 4.5,
     tags: ['Fashion', 'Beauty', 'Skincare'],
     campaigns: 2,
@@ -44,7 +48,7 @@ export const dummyBrands = [
   },
   {
     name: 'FitFuel Protein',
-    logo: 'dataset/tech.png',
+    logo: tech,
     rating: 4.5,
     tags: ['Fitness', 'Nutrition', 'Health'],
     campaigns: 3,
@@ -54,7 +58,7 @@ export const dummyBrands = [
   },
   {
     name: 'Wanderlust Adventures',
-    logo: 'dataset/everem.png',
+    logo: everem,
     rating: 4.5,
     tags: ['Lifestyle', 'Health', 'Nutrition'],
     campaigns: 1,
@@ -64,7 +68,7 @@ export const dummyBrands = [
   },
   {
     name: 'EverEm Skincare',
-    logo: 'dataset/everem.png',
+    logo: everem,
     rating: 4.5,
     tags: ['Fashion', 'Beauty', 'Skincare'],
     submittedDate: '20/05/2025',
@@ -74,7 +78,7 @@ export const dummyBrands = [
   },
   {
     name: 'Tech Innovations',
-    logo: 'dataset/tech.png',
+    logo: tech,
     rating: 4.5,
     tags: ['Fashion', 'Beauty', 'Skincare'],
     requestedDate: '20/05/2025',

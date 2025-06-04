@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './AllBrands.css';
+import '../styles/AllBrands.css';
 import { Star, Search, SlidersHorizontal } from 'lucide-react';
 import { dummyBrands } from '../data/brands';
 

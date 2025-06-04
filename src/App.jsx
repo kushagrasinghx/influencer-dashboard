@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase';
 
-import Sidebar from './components/Sidebar';
-import Navbar from './components/Navbar';
+import DashboardLayout from './layouts/DashboardLayout';
 import Login from './pages/Login';
 import AllBrands from './pages/AllBrands';
 import CollaborationStatus from './pages/CollaborationStatus';
@@ -16,43 +15,82 @@ import './App.css';
 
 function App() {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
   const location = useLocation();
-
-  const pageTitles = {
-    '/': 'All Brands',
-    '/collaboration': 'Collaboration Status',
-    '/coupon': 'Coupon',
-    '/affiliate': 'Affiliate',
-    '/settings': 'Settings',
-  };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false);
     });
     return () => unsubscribe();
   }, []);
 
-  if (!user) {
-    return <Login />;
+  if (loading) {
+    return (
+      <div className="loading-screen">
+        <div className="spinner" />
+        <p>Please wait a moment while we sign you in!</p>
+      </div>
+    );
+  }
+
+  if (!user && location.pathname !== '/login') {
+    return <Navigate to="/login" replace />;
+  }
+
+  if (user && location.pathname === '/login') {
+    return <Navigate to="/" replace />;
   }
 
   return (
-    <div className="app">
-      <Sidebar />
-      <div className="content">
-        <Navbar title={pageTitles[location.pathname] || 'Dashboard'} user={user} />
-        <div className="page-body">
-          <Routes>
-            <Route path="/" element={<AllBrands />} />
-            <Route path="/collaboration" element={<CollaborationStatus />} />
-            <Route path="/coupon" element={<Coupon />} />
-            <Route path="/affiliate" element={<Affiliate />} />
-            <Route path="/settings" element={<Settings />} />
-          </Routes>
-        </div>
-      </div>
-    </div>
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      {user && (
+        <>
+          <Route
+            path="/"
+            element={
+              <DashboardLayout user={user}>
+                <AllBrands />
+              </DashboardLayout>
+            }
+          />
+          <Route
+            path="/collaboration"
+            element={
+              <DashboardLayout user={user}>
+                <CollaborationStatus />
+              </DashboardLayout>
+            }
+          />
+          <Route
+            path="/coupon"
+            element={
+              <DashboardLayout user={user}>
+                <Coupon />
+              </DashboardLayout>
+            }
+          />
+          <Route
+            path="/affiliate"
+            element={
+              <DashboardLayout user={user}>
+                <Affiliate />
+              </DashboardLayout>
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              <DashboardLayout user={user}>
+                <Settings />
+              </DashboardLayout>
+            }
+          />
+        </>
+      )}
+    </Routes>
   );
 }
 
