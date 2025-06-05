@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../styles/AllBrands.css';
 import { Star, Search, SlidersHorizontal } from 'lucide-react';
 import { dummyBrands } from '../data/brands';
 
@@ -11,53 +10,77 @@ const AllBrands = () => {
   );
 
   return (
-    <div className="brands-page">
-      <div className="brands-header">
-        <h3>{filteredBrands.length} Brands</h3>
-        <div className="search-filter">
-          <div className="search-input">
+    <div className="font-sans">
+      {/* Header */}
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+        <h3 className="text-base font-semibold text-gray-800">
+          {filteredBrands.length} Brands
+        </h3>
+        <div className="flex gap-3 items-center">
+          {/* Search */}
+          <div className="flex items-center bg-gray-100 px-3 py-2 rounded-lg">
             <Search size={16} />
             <input
               type="text"
               placeholder="Search brand"
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
+              className="ml-2 bg-transparent outline-none text-sm text-gray-800"
             />
           </div>
-          <button className="filter-btn">
+          {/* Filter */}
+          <button className="bg-white border border-gray-300 px-3 py-2 rounded-lg flex items-center gap-1.5 text-sm cursor-pointer">
             <SlidersHorizontal size={16} />
             Filter
           </button>
         </div>
       </div>
 
-      <div className="brands-grid">
+      {/* Brand Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6">
         {filteredBrands.map((brand, index) => (
-          <div className="brand-card" key={index}>
-            <div className="brand-header">
-              <img src={brand.logo} alt={brand.name} />
+          <div
+            className="bg-white p-5 rounded-2xl shadow-sm flex flex-col gap-3"
+            key={index}
+          >
+            <div className="flex items-center gap-4">
+              <img
+                src={brand.logo}
+                alt={brand.name}
+                className="w-12 h-12 rounded-lg object-cover"
+              />
               <div>
-                <h4>{brand.name}</h4>
-                <div className="rating">
-                  <Star size={16} color="#FEC84B" fill="#FEC84B" />
-                  <span>{brand.rating}</span>
+                <h4 className="text-base font-semibold text-gray-900">{brand.name}</h4>
+                <div className="flex items-center gap-1 mt-1">
+                  <Star size={16} fill="#FEC84B" color="#FEC84B" />
+                  <span className="text-sm font-medium text-gray-700">{brand.rating}</span>
                 </div>
               </div>
             </div>
 
-            <p className="desc">{brand.desc}</p>
+            <p className="text-sm text-gray-600 leading-relaxed">{brand.desc}</p>
 
-            <div className="tag-list">
+            <div className="flex gap-2 flex-wrap">
               {brand.tags?.map(tag => (
-                <span className="tag" key={tag}>{tag}</span>
+                <span
+                  className="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-lg font-medium"
+                  key={tag}
+                >
+                  {tag}
+                </span>
               ))}
             </div>
 
-            <div className="card-footer">
-              <span className="campaigns">
-                Active Campaigns: <strong>{brand.campaigns?.toString().padStart(2, '0') || '00'}</strong>
+            <div className="flex justify-between items-center mt-2">
+              <span className="text-sm">
+                Active Campaigns:{' '}
+                <strong className="text-pink-800">
+                  {brand.campaigns?.toString().padStart(2, '0') || '00'}
+                </strong>
               </span>
-              <button className="collab-btn">Collaborate</button>
+              <button className="bg-pink-800 text-white px-4 py-2 text-sm rounded-xl hover:bg-pink-100 hover:text-pink-800 transition">
+                Collaborate
+              </button>
             </div>
           </div>
         ))}

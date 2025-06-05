@@ -9,6 +9,13 @@
   margin-bottom: 1.5rem;
 }
 
+.brands-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
 .search-filter {
   display: flex;
   gap: 1rem;
@@ -90,8 +97,10 @@
 }
 
 .brand-header h4 {
-  margin: 0;
-  font-size: 1rem;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #222;
 }
 
 .rating {
