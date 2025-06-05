@@ -36,9 +36,9 @@ const CollaborationStatus = () => {
   };
 
   return (
-    <div className="flex flex-col pb-8 font-sans">
+    <div className="flex flex-col pb-8 font-sans overflow-x-hidden">
       {/* Header */}
-      <div className="flex justify-between items-center flex-wrap mb-6 gap-4">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
         <h3 className="font-semibold text-gray-800 m-0">
           {filteredBrands.length} Collaborations
         </h3>
@@ -62,7 +62,7 @@ const CollaborationStatus = () => {
 
       {/* Sections */}
       {Object.entries(statusMap).map(([key, title]) => (
-        <div className="bg-gray-100 rounded-lg shadow-sm mb-7 p-4" key={key}>
+        <div className="bg-gray-100 rounded-lg shadow-sm mb-7 p-4 overflow-x-hidden" key={key}>
           <div
             className="flex justify-between items-center cursor-pointer mb-4 select-none"
             onClick={() => toggleSection(key)}
