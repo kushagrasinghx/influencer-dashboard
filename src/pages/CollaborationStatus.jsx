@@ -42,15 +42,15 @@ const CollaborationStatus = () => {
         <h3 className="font-semibold text-gray-800 m-0">
           {filteredBrands.length} Collaborations
         </h3>
-        <div className="flex gap-3 items-center">
-          <div className="flex items-center bg-gray-100 px-3 py-2 rounded-lg">
+        <div className="flex gap-3 items-center w-full sm:w-auto">
+          <div className="flex items-center bg-gray-100 px-3 py-2 rounded-lg flex-grow sm:flex-grow-0">
             <Search size={16} />
             <input
               type="text"
               placeholder="Search brand"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="ml-2 bg-transparent outline-none text-sm text-gray-800"
+              className="ml-2 bg-transparent outline-none text-sm text-gray-800 w-full"
             />
           </div>
           <button className="bg-white border border-gray-300 px-3 py-2 rounded-lg flex items-center gap-1.5 text-sm cursor-pointer">
@@ -79,7 +79,7 @@ const CollaborationStatus = () => {
                   className="bg-white p-5 rounded-2xl shadow-sm flex flex-col gap-3"
                   key={idx}
                 >
-                  <div className="flex justify-between items-start gap-4">
+                  <div className="flex justify-between items-start gap-4 flex-wrap">
                     <div className="flex items-center gap-4">
                       <img
                         src={brand.logo}
@@ -96,7 +96,7 @@ const CollaborationStatus = () => {
                         </div>
                       </div>
                     </div>
-                    <button className="bg-pink-800 text-white px-4 py-2 text-sm rounded-xl hover:bg-pink-100 hover:text-pink-800 transition">
+                    <button className="bg-pink-800 text-white px-4 py-2 text-sm rounded-xl hover:bg-pink-100 hover:text-pink-800 transition mt-4 sm:mt-0">
                       Action Button
                     </button>
                   </div>

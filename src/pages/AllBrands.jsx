@@ -16,16 +16,16 @@ const AllBrands = () => {
         <h3 className="text-base font-semibold text-gray-800">
           {filteredBrands.length} Brands
         </h3>
-        <div className="flex gap-3 items-center">
+        <div className="flex gap-3 items-center w-full sm:w-auto">
           {/* Search */}
-          <div className="flex items-center bg-gray-100 px-3 py-2 rounded-lg">
+          <div className="flex items-center bg-gray-100 px-3 py-2 rounded-lg flex-grow sm:flex-grow-0">
             <Search size={16} />
             <input
               type="text"
               placeholder="Search brand"
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              className="ml-2 bg-transparent outline-none text-sm text-gray-800"
+              className="ml-2 bg-transparent outline-none text-sm text-gray-800 w-full"
             />
           </div>
           {/* Filter */}
