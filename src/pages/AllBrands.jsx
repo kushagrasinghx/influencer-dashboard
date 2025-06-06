@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Star, Search, SlidersHorizontal } from 'lucide-react';
+import { Star, SlidersHorizontal } from 'lucide-react';
 import { dummyBrands } from '../data/brands';
+import SearchBar from '../components/SearchBar';
 
 const AllBrands = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -17,18 +18,11 @@ const AllBrands = () => {
           {filteredBrands.length} Brands
         </h3>
         <div className="flex gap-3 items-center w-full sm:w-auto">
-          {/* Search */}
-          <div className="flex items-center bg-gray-100 px-3 py-2 rounded-lg flex-grow sm:flex-grow-0">
-            <Search size={16} />
-            <input
-              type="text"
-              placeholder="Search brand"
-              value={searchQuery}
-              onChange={e => setSearchQuery(e.target.value)}
-              className="ml-2 bg-transparent outline-none text-sm text-gray-800 w-full"
-            />
-          </div>
-          {/* Filter */}
+          <SearchBar
+            placeholder="Search brand"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
           <button className="bg-white border border-gray-300 px-3 py-2 rounded-lg flex items-center gap-1.5 text-sm cursor-pointer">
             <SlidersHorizontal size={16} />
             Filter
