@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { auth, provider } from "../firebase";
 import { signInWithPopup } from "firebase/auth";
 
+import pattern from '../assets/patterns/vector.png';
+import loginVisual from '../assets/login/login_page.png';
+
 const Login = () => {
   const [isLogin, setIsLogin] = useState(false);
 
@@ -17,7 +20,7 @@ const Login = () => {
     <div className="h-screen w-screen flex overflow-hidden bg-[#1F2933] relative">
       {/* Pattern BG */}
       <img
-        src="/src/assets/patterns/vector.png"
+        src={pattern}
         alt="pattern"
         className="absolute inset-0 w-full h-full object-cover opacity-70 z-0"
       />
@@ -136,7 +139,7 @@ const Login = () => {
 
         {/* Image */}
         <img
-          src="/src/assets/login/login_page.png"
+          src={loginVisual}
           alt="Login Visual"
           className="max-w-[600px] object-contain"
         />
