@@ -43,14 +43,6 @@ export default function Navbar({ title }) {
             e.target.src = '/default-profile.png';
           }}
         />
-        <div className="flex-col hidden sm:flex">
-          <p className="font-semibold text-base font-dm-sans">
-            {user?.displayName || 'Guest'}
-          </p>
-          <p className="text-sm text-[#555] font-dm-sans">
-            {user?.email || 'guest@example.com'}
-          </p>
-        </div>
       </div>
     </div>
   );

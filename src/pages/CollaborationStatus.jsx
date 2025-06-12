@@ -49,7 +49,7 @@ const CollaborationStatus = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <button className="bg-white border border-gray-300 px-3 py-2 rounded-lg flex items-center gap-1.5 text-sm cursor-pointer">
+          <button className="bg-white border border-gray-300 px-3 py-2 rounded-lg flex items-center gap-1.5 text-sm cursor-pointer hover:bg-[#fce8ec] hover:text-[#9F1D35] transition">
             <SlidersHorizontal size={16} />
             Filter
           </button>
@@ -92,7 +92,7 @@ const CollaborationStatus = () => {
                         </div>
                       </div>
                     </div>
-                    <button className="bg-pink-800 text-white px-4 py-2 text-sm rounded-xl hover:bg-pink-100 hover:text-pink-800 transition mt-4 sm:mt-0">
+                    <button className="bg-[#9F1D35] text-white px-4 py-2 text-sm rounded-xl hover:bg-[#fce8ec] hover:text-[#9F1D35] transition mt-4 sm:mt-0 cursor-pointer">
                       Action Button
                     </button>
                   </div>
@@ -102,7 +102,7 @@ const CollaborationStatus = () => {
                   <div className="flex gap-2 flex-wrap">
                     {brand.tags?.map((tag) => (
                       <span
-                        className="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-lg font-medium"
+                        className="bg-[#fce8ec] text-[#9F1D35] text-xs px-3 py-1 rounded-lg font-medium"
                         key={tag}
                       >
                         {tag}

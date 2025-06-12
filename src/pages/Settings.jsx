@@ -48,7 +48,7 @@ const Settings = () => {
       <div>
         <button
           onClick={handleLogout}
-          className="bg-[#9F1D35] text-white px-6 py-2 rounded-lg text-sm hover:bg-[#87162d] transition w-full sm:w-auto"
+          className="bg-[#9F1D35] text-white px-6 py-2 rounded-lg text-sm hover:bg-[#fce8ec] hover:text-[#9F1D35] transition w-full sm:w-auto cursor-pointer"
         >
           Logout
         </button>

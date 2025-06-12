@@ -23,7 +23,7 @@ const AllBrands = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <button className="bg-white border border-gray-300 px-3 py-2 rounded-lg flex items-center gap-1.5 text-sm cursor-pointer">
+          <button className="bg-white border border-gray-300 px-3 py-2 rounded-lg flex items-center gap-1.5 text-sm cursor-pointer hover:bg-[#fce8ec] hover:text-[#9F1D35] transition">
             <SlidersHorizontal size={16} />
             Filter
           </button>
@@ -57,7 +57,7 @@ const AllBrands = () => {
             <div className="flex gap-2 flex-wrap">
               {brand.tags?.map(tag => (
                 <span
-                  className="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-lg font-medium"
+                  className="bg-[#fce8ec] text-[#9F1D35] text-xs px-3 py-1 rounded-lg font-medium"
                   key={tag}
                 >
                   {tag}
@@ -68,11 +68,11 @@ const AllBrands = () => {
             <div className="flex justify-between items-center mt-2">
               <span className="text-sm">
                 Active Campaigns:{' '}
-                <strong className="text-pink-800">
+                <strong className="text-[#9F1D35]">
                   {brand.campaigns?.toString().padStart(2, '0') || '00'}
                 </strong>
               </span>
-              <button className="bg-pink-800 text-white px-4 py-2 text-sm rounded-xl hover:bg-pink-100 hover:text-pink-800 transition">
+              <button className="bg-[#9F1D35] text-white px-4 py-2 text-sm rounded-xl hover:bg-[#fce8ec] hover:text-[#9F1D35] transition cursor-pointer">
                 Collaborate
               </button>
             </div>
