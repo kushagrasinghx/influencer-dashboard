@@ -18,11 +18,14 @@ function App() {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      console.log('Auth state changed:', currentUser);
       setUser(currentUser);
       setLoading(false);
     });
     return () => unsubscribe();
   }, []);
+
+  console.log('App render - loading:', loading, 'user:', user, 'location:', location.pathname);
 
   if (loading) {
     return (
@@ -33,62 +36,70 @@ function App() {
     );
   }
 
+  // If no user and not on login page, redirect to login
   if (!user && location.pathname !== '/login') {
+    console.log('Redirecting to login - no user');
     return <Navigate to="/login" replace />;
   }
 
+  // If user exists and on login page, redirect to dashboard
   if (user && location.pathname === '/login') {
+    console.log('Redirecting to dashboard - user exists');
     return <Navigate to="/" replace />;
   }
 
   return (
-    <Routes>
-      <Route path="/login" element={<Login />} />
-      {user && (
-        <>
-          <Route
-            path="/"
-            element={
-              <DashboardLayout user={user}>
-                <AllBrands />
-              </DashboardLayout>
-            }
-          />
-          <Route
-            path="/collaboration"
-            element={
-              <DashboardLayout user={user}>
-                <CollaborationStatus />
-              </DashboardLayout>
-            }
-          />
-          <Route
-            path="/coupon"
-            element={
-              <DashboardLayout user={user}>
-                <Coupon />
-              </DashboardLayout>
-            }
-          />
-          <Route
-            path="/affiliate"
-            element={
-              <DashboardLayout user={user}>
-                <Affiliate />
-              </DashboardLayout>
-            }
-          />
-          <Route
-            path="/settings"
-            element={
-              <DashboardLayout user={user}>
-                <Settings />
-              </DashboardLayout>
-            }
-          />
-        </>
-      )}
-    </Routes>
+    <div className="app">
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        {user && (
+          <>
+            <Route
+              path="/"
+              element={
+                <DashboardLayout user={user}>
+                  <AllBrands />
+                </DashboardLayout>
+              }
+            />
+            <Route
+              path="/collaboration"
+              element={
+                <DashboardLayout user={user}>
+                  <CollaborationStatus />
+                </DashboardLayout>
+              }
+            />
+            <Route
+              path="/coupon"
+              element={
+                <DashboardLayout user={user}>
+                  <Coupon />
+                </DashboardLayout>
+              }
+            />
+            <Route
+              path="/affiliate"
+              element={
+                <DashboardLayout user={user}>
+                  <Affiliate />
+                </DashboardLayout>
+              }
+            />
+            <Route
+              path="/settings"
+              element={
+                <DashboardLayout user={user}>
+                  <Settings />
+                </DashboardLayout>
+              }
+            />
+          </>
+        )}
+        {/* Catch all route */}
+        <Route path="*" element={<Navigate to={user ? "/" : "/login"} replace />} />
+      </Routes>
+    </div>
   );
 }
 
