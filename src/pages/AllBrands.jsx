@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Star, SlidersHorizontal } from 'lucide-react';
 import { dummyBrands } from '../data/brands';
 import SearchBar from '../components/SearchBar';
 
 const AllBrands = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
 
   const filteredBrands = dummyBrands.filter(brand =>
     brand.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  const handleCollaborate = (brandName) => {
+    const urlFriendlyName = brandName.toLowerCase().replace(/\s+/g, '-');
+    navigate(`/brand/${urlFriendlyName}`);
+  };
 
   return (
     <div className="font-sans">
@@ -72,7 +79,10 @@ const AllBrands = () => {
                   {brand.campaigns?.toString().padStart(2, '0') || '00'}
                 </strong>
               </span>
-              <button className="bg-[#9F1D35] text-white px-4 py-2 text-sm rounded-xl hover:bg-[#fce8ec] hover:text-[#9F1D35] transition cursor-pointer">
+              <button 
+                onClick={() => handleCollaborate(brand.name)}
+                className="bg-[#9F1D35] text-white px-4 py-2 text-sm rounded-xl hover:bg-[#fce8ec] hover:text-[#9F1D35] transition cursor-pointer"
+              >
                 Collaborate
               </button>
             </div>

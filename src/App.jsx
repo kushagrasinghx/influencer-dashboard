@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import DashboardLayout from './layouts/DashboardLayout';
 import AllBrands from './pages/AllBrands';
+import BrandCollaborate from './pages/BrandCollaborate';
 import CollaborationStatus from './pages/CollaborationStatus';
 import Coupon from './pages/Coupon';
 import Affiliate from './pages/Affiliate';
@@ -23,6 +24,14 @@ function App() {
           element={
             <DashboardLayout user={mockUser}>
               <AllBrands />
+            </DashboardLayout>
+          }
+        />
+        <Route
+          path="/brand/:brandName"
+          element={
+            <DashboardLayout user={mockUser}>
+              <BrandCollaborate />
             </DashboardLayout>
           }
         />
